@@ -1,9 +1,10 @@
 import recipes from "@/data/recipes.json";
 import Image from "next/image";
+import Link from "next/link";
 
 const Hero = () => {
-  const randomNumber = Math.floor(Math.random() * 10);
-
+  const totalRecipes = recipes.length;
+  const randomNumber = Math.floor(Math.random() * (recipes.length - 1));
   const randomRecipe = recipes[randomNumber];
   return (
     <section className="mb-16 bg-orange-50">
@@ -20,12 +21,12 @@ const Hero = () => {
         <div>
           <h1 className="text-4xl font-bold mb-4">{randomRecipe?.title}</h1>
           <p className="text-gray-600 mb-4">{randomRecipe?.description}</p>
-          <a
-            href="./blog-details.html"
+          <Link
+            href={`/${randomRecipe.category_id}/${randomRecipe?.title}`}
             className="bg-orange-500 text-white px-6 py-2 rounded-full inline-block hover:bg-orange-600"
           >
             View Recipe
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 const Header = () => {
   return (
     <header className="container mx-auto px-4 py-4 shadow-lg min-w-full fixed top-0 bg-white z-50">
       <nav className="flex justify-between items-center">
-        <a href="/index.html" className="text-3xl font-bold">
+        <Link href="/" className="text-3xl font-bold">
           <Image
             src="/assets/lws-kitchen.png"
             width="100"
@@ -11,12 +12,12 @@ const Header = () => {
             className="h-10"
             alt="logo"
           />
-        </a>
+        </Link>
         <ul className="hidden md:flex space-x-6">
           <li>
-            <a href="./index.html" className="hover:text-orange-500">
+            <Link href="/" className="hover:text-orange-500">
               Home
-            </a>
+            </Link>
           </li>
           <li>
             <a href="./category.html" className="hover:text-orange-500">
